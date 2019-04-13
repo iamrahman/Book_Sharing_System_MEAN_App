@@ -1,0 +1,64 @@
+<legend>Post Book</legend>
+<div class="">
+  <div class="col-md-4 col-md-offset-4" *ngIf="success">
+      <p style="color:darkgreen;"><img src="https://cdn2.iconfinder.com/data/icons/basic-ui-elements-16/117/correct-256.png" style="width:32px;"> 
+        <b> &nbsp;Your Data has been recorded Successfully</b></p>
+  </div>
+  <div class="col-md-4 col-md-offset-4" *ngIf="error">
+        <p style="color:darkred;"><img src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678069-sign-error-128.png" style="width:32px;"> 
+          <b> &nbsp;Some Data is missing or not appropriate</b></p>
+  </div>
+    <form>
+      <div class="form-group col-md-6">
+        <label>Enter Book Name</label>
+        <input type="text" name="name" [(ngModel)]="name" class="form-control" placeholder="Enter Book Name">
+      </div>
+      <div class="form-group col-md-6">
+          <label>Enter Book Edition</label>
+          <input type="text" name="edition" [(ngModel)]="edition" class="form-control" placeholder="Enter Book Edition">
+      </div>
+      <div class="form-group col-md-6">
+          <label>Enter Publisher Name</label>
+          <input type="text" name="publiser" [(ngModel)]="publisher" class="form-control" placeholder="Enter Publisher Name">
+      </div>
+      <div class="form-group col-md-6">
+          <label>Enter Author name</label>
+          <input type="text" name="author" [(ngModel)]="author" class="form-control" placeholder="Enter Author Name">
+      </div>
+      <div class="form-group col-md-6">
+          <label>Price Type</label><br>
+          <input type="radio" value="fixed" name="price_type" [(ngModel)]="price_type"><label>Fixed Price</label> &nbsp;&nbsp;
+          <input type="radio" value="variable" name="price_type" [(ngModel)]="price_type"><label>Variable Price</label>
+      </div>
+      <div class="form-group col-md-6">
+          <label>Enter Price</label>
+          <input type="text" class="form-control" location="price" name="price" [(ngModel)]="price" placeholder="Enter Book Price in Indian Rupee">
+      </div><br>
+      <div class="form-group col-md-6">
+          <label>Enter Location</label>
+          <input id="pac-input" type="text" name="location" [(ngModel)]="location" class="form-control" placeholder="Enter Location">
+      </div>
+      <div class="form-group col-md-6">
+          <label>Enter ZIP Code</label>
+          <input type="text" class="form-control" name="zip" [(ngModel)]="zip" placeholder="Enter ZIP Code">
+      </div>
+      <div class="form-group col-md-12">
+          <label>Enter Landmark <label style="color: rgb(194, 15, 15);">Eg: University, College, School</label></label>
+          <input type="text" class="form-control" name="landmark" [(ngModel)]="landmark" placeholder="Enter Any Landmark Name (optional)">
+      </div>
+
+      <div class="form-group col-md-6">
+          <label>Upload Front Page</label>
+          <input type="file" name="front_photo" [(ngModel)]="front_photo">
+      </div>
+      <div class="form-group col-md-6">
+          <label>Upload Back Page</label>
+          <input type="file" name="back_photo" [(ngModel)]="back_photo">
+      </div><br>
+
+      <div class="col-md-2 col-md-offset-5">
+        <button class="btn btn-primary" (click)="postBook()"> Publish </button>
+      </div>
+    </form>
+ 
+</div>

@@ -1,0 +1,37 @@
+<legend>Book History</legend>
+
+<div class="col-md-12 table-responsive" style="width:100%;"> 
+
+    <table id="customers" class="table responsive table-striped" *ngIf="docs != ''">
+        <tr>
+          <th></th>
+          <th>Book Name</th>
+          <th>Edition</th>
+          <th>Price</th>
+          <th>Author</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+        <tr *ngFor="let obj of docs">
+          <th>
+            <img id="bookimg" style="width: 50px; padding: 2%;" src="https://marketplace.canva.com/MACyIyAB-6k/1/0/thumbnail_large-6/canva-minimalist-photo-wattpad-book-cover-MACyIyAB-6k.jpg" alt="Publication Image">
+          </th>
+          <td>{{ obj.name }}</td>
+          <td>{{ obj.edition }}</td>
+          <td>Rs. {{ obj.price }}</td>
+          <td>{{ obj.author }}</td>
+          <td>{{ obj.status }}</td>
+          <td>
+            <div class="btn-group">
+              <button class="btn btn-sm btn-link"><i class="fas fa-eye"></i> View</button>
+              <button class="btn btn-sm btn-link"><i class="fas fa-edit"></i> Edit</button>
+              <button class="btn btn-sm btn-link"><i class="fas fa-trash-alt"></i> Delete</button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+      </table>
+      <div class="col-md-4 col-md-offset-4" *ngIf="docs == ''">
+        <h4 style="color:rgb(189, 27, 27);">No record Found. <a routerLink="/book/postbook" >Click to Upload Book</a></h4>
+      </div>
+</div>

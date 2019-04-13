@@ -1,0 +1,7 @@
+.form-control{
+  margin-left: 5%;
+  width: 90%;
+}
+.validation-message{
+  color: rgb(180, 25, 25)
+}

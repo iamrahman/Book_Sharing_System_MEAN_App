@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="col-md-3" style="background-color:rgb(255, 255, 255); height:auto; padding-left: 5%;  padding-right: 5%;">
+    <hr>
+    <button type="button" id="btn-filter" class="btn btn-primary btn-block" data-toggle="collapse" data-target="#demo">Show Filter</button>
+    <div id="demo" class="collapse">
+        <form>
+            <label>Search Your Book</label>
+            <input type="text" placeholder="Enter Book Name" name="name" [(ngModel)]="name" class="form-control"><br>
+            <label>Enter Your Location</label>
+            <input type="text" placeholder="Enter Your Location" name="location" [(ngModel)]="location" class="form-control"><br>
+            <label> Enter Landmark</label>
+            <input type="text" placeholder="Enter Landmark" name="landmark" [(ngModel)]="landmark" class="form-control"><br>
+            
+            <button class="btn btn-primary" id="btn-filter" (click)="searchBook()"> &nbsp;&nbsp;Apply Filter&nbsp;&nbsp; </button>
+        </form>
+    </div>
+    <br><br>
+            <img src="https://fruitbowldigital.com/wp-content/uploads/2016/06/watch.gif" style="position: relative; width: 100%;">
+  </div>
+  <!-- Item List  -->
+  <div class="col-md-9">
+    <hr>
+    <!-- Looping Start -->
+    <div *ngFor="let obj of docs">
+
+        <div class="col-sm-6 col-lg-3"> 
+            <div class="single-publication">
+                <figure>
+                    <a routerLink="book/singleview/{{ obj._id }}">
+                        <img id="bookimg" src="https://marketplace.canva.com/MACyIyAB-6k/1/0/thumbnail_large-6/canva-minimalist-photo-wattpad-book-cover-MACyIyAB-6k.jpg" alt="Publication Image">
+                    </a>
+
+                    <ul>
+                        <li><a href="#" title="Add to Favorite"><i class="fa fa-heart"></i></a></li>
+                    </ul>
+                </figure>
+
+                <div class="publication-content">
+                    <span class="category"><b>Author: </b>{{ obj.author }}</span>
+                    <h3><a href="#">{{ obj.name }}</a></h3>
+                    <p><b>Location:</b> {{ obj.location }}</p>
+                    <h4 class="price"><i class="fas fa-rupee-sign"></i> {{ obj.price}} <span><b>Rs. </b>{{ obj.price + 0.20*obj.price }}</span></h4>
+                </div>
+
+                <div class="add-to-cart">
+                    <a routerLink="book/singleview/{{ obj._id }}" class="default-btn">View Book</a>
+                </div>
+            </div>
+        </div>
+        
+       
+      
+    </div>
+    <!-- Looping End -->
+    <div *ngIf="docs == ''" id="btn-filter">
+        <br><br>
+        <h3 style="color:red;">Sorry!! No record found</h3>
+    </div>
+  </div>
+</div>

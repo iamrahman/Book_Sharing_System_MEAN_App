@@ -1,0 +1,70 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" routerLink="/" style="color:white;">
+          <b><img src="https://webstockreview.net/images/textbook-clipart-transparent-background-14.png" style="width:45px;"> ONLINE BOOKSHARE</b>
+        </a>
+      </div>
+  
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+           <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#"><i class="fas fa-flask"></i> Science</a></li>
+              <li><a href="#"><i class="fas fa-atlas"></i> Biography</a></li>
+              <li><a href="#"><i class="fas fa-sim-card"></i> Technology</a></li>
+              <li><a href="#"><i class="fas fa-square-root-alt"></i> Mathematics</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Location <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">New Delhi-NCR</a></li>
+              <li><a href="#">Kolkata</a></li>
+              <li><a href="#">Bangalore</a></li>
+              <li><a href="#">Hyderabad</a></li>
+              <li><a href="#">Chennai</a></li>
+              <li><a href="#">Lucknow</a></li>
+              <li><a href="#">Jaipur</a></li>
+              <li><a href="#">Chandighar</a></li>
+              <li><a href="#">Jalandhar</a></li>
+              <li><a href="#">Indore</a></li>
+              <li><a href="#">Raipur</a></li>
+              <li><a href="#">Mumbai</a></li>
+            </ul>
+          </li>
+        <li><a href="#">About Us</a></li>
+        <li *ngIf="!userDetails"><a routerLink="/earn-online">Earn Online</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li *ngIf="userDetails">
+                <a routerLink="/user/details" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-th" aria-hidden="true"></span> Dashboard</a>  
+            </li>
+            <li *ngIf="userDetails">
+                <a routerLink="/user/details" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-shopping-cart"></i> Bucket <span class="badge" style="background-color:red;">7</span></a>
+            </li>
+           <li class="dropdown"  *ngIf="userDetails">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>{{userDetails.fullName.split(' ')[0]}}<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="http://www.fgruber.ch/" target="_blank"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> User Settings</a></li>
+              <li><a (click)="onLogout()"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a></li>
+           </ul>
+          </li>
+          <li  *ngIf="!userDetails">
+            <a routerLink="/login" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Let's Begin</a>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  
+<router-outlet></router-outlet>

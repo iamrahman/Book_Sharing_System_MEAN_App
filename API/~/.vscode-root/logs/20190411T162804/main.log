@@ -1,0 +1,28 @@
+[2019-04-11 16:28:04.898] [main] [info] update#setState idle
+[2019-04-11 16:28:05.137] [main] [info] [storage] migrating global storage from localStorage into SQLite
+[2019-04-11 16:28:05.137] [main] [info] [storage] migrated global storage
+[2019-04-11 16:28:34.900] [main] [info] update#setState checking for updates
+[2019-04-11 16:28:35.087] [main] [info] update#setState available for download
+[2019-04-14 01:21:59.100] [main] [error] Error: ENOENT: no such file or directory, open '/home/user/Documents/MEAN-Stack-Login-and-Logout-in-Angular-6-Part-2/server/~/.vscode-root/storage.json'
+    at Object.fs.openSync (original-fs.js:577:3)
+    at Object.t.writeFileAndFlushSync (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:149:475)
+    at d.saveSync (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:282:800)
+    at d.setItem (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:282:595)
+    at e.setItem (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:283:119)
+    at e.updateMenu (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:325:726)
+    at a.updateMenubar (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:337:366)
+    at n.call (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:229:630)
+    at w.onPromise (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:167:322)
+    at w.onRawMessage (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:166:981)
+    at protocolListener.protocol.onMessage.e (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:166:547)
+    at u.fire (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:49:209)
+    at e (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:173:22)
+    at u.fire (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:49:209)
+    at e (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:44:794)
+    at u.fire (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:49:209)
+    at e (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:44:940)
+    at u.fire (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:49:209)
+    at EventEmitter.i (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:46:720)
+    at EventEmitter.emit (events.js:187:15)
+    at WebContents.<anonymous> (/usr/share/code/resources/electron.asar/browser/api/web-contents.js:285:13)
+    at WebContents.emit (events.js:182:13)
