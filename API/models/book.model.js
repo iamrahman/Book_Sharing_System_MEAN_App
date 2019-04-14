@@ -56,6 +56,12 @@ var bookSchema = new mongoose.Schema({
     landmark:{
         type: String,
         required: false
+    },
+    log:{
+        type: String,
+    },
+    lat:{
+        type: String,
     }
     
 });

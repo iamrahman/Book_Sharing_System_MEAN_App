@@ -20,6 +20,8 @@ module.exports.postbook = (req, res, next) => {
     book.uploaded_at = Date.now();
     book.landmark = req.body.landmark;
     book.status = 'public';
+    book.lat = req.body.lat;
+    book.log = req.body.log;
     book.save((err, doc) => {
         if (!err)
             res.send(doc);
@@ -76,4 +78,17 @@ module.exports.getSearchBookList = (req, res, next) => {
         }
     });
     
+}
+
+module.exports.getBookListLocation = (req, res, next) => {
+    var latitude = req.body.lat;
+    var longitude = req.body.log;
+    Book.find({'lat': {$gte:latitude-1, $lte:latitude+1}, 'lat': {$gte:latitude-1, $lte:latitude+1} }, function(err, docs){
+        if(err){
+            res.send("Something Went Wrong");
+        }
+        else{
+            return res.status(200).json({status: true, docs });
+        }
+    });
 }

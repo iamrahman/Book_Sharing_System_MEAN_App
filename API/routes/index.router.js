@@ -17,4 +17,5 @@ router.get('/allbooks',jwtHelper.verifyJwtToken, ctrlBook.allbook);
 router.get('/allbooks/currentUserBook', jwtHelper.verifyJwtToken, ctrlBook.getAllCurrentUserBook);
 router.get('/book/:book_id', jwtHelper.verifyJwtToken, ctrlBook.getSingleBookDetails);
 router.post('/allbook/search', jwtHelper.verifyJwtToken, ctrlBook.getSearchBookList);
+router.post('/allbook/search/location', jwtHelper.verifyJwtToken, ctrlBook.getBookListLocation);
 module.exports = router;

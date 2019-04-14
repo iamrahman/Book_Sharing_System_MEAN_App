@@ -52,6 +52,9 @@ export class UserService {
   filterBook(Book){
     return this.http.post(environment.apiBaseUrl + '/allbook/search', Book);
   }
+  getListByLocation(Location){
+    return this.http.post(environment.apiBaseUrl + '/allbook/search/location', Location);
+  }
 
 
   //Helper Methods

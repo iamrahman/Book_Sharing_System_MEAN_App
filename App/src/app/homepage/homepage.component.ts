@@ -41,4 +41,29 @@ export class HomepageComponent implements OnInit {
     )
   }
 
+  getLocation(){
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((pos)=>this.showPosition(pos));
+    } else { 
+      console.log("Geolocation is not supported by this browser.");
+    }
+  }
+
+  showPosition(position) {
+    console.log("Latitude: " + position.coords.latitude + 
+    "Longitude: " + position.coords.longitude);
+    const Location ={
+      lat: position.coords.latitude,
+      log: position.coords.longitude
+    };
+    this.userService.getListByLocation(Location).subscribe(
+      res => {
+        this.docs = res['docs'];
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+
 }

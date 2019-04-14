@@ -7,10 +7,16 @@ import { Book } from './Book';
   styleUrls: ['./postbook.component.css']
 })
 export class PostbookComponent implements OnInit {
-
-  constructor(private userService: UserService) { }
   
+  constructor(private userService: UserService) { }
+  geolocation:any;
   ngOnInit() {
+      if (navigator.geolocation) {
+        return navigator.geolocation.getCurrentPosition((pos)=>this.showPosition(pos));
+      } else { 
+        console.log("Geolocation is not supported by this browser.");
+      }
+  
   }
 
       name: any;
@@ -27,6 +33,8 @@ export class PostbookComponent implements OnInit {
       landmark:any;
       success:any;
       error:any;
+      lat:any;
+      log:any;
       
   postBook(){
     const Book = {
@@ -40,8 +48,11 @@ export class PostbookComponent implements OnInit {
       price: this.price,
       price_type: this.price_type,
       edition: this.edition,
-      landmark: this.landmark
+      landmark: this.landmark,
+      lat: this.geolocation.latitude,
+      log: this.geolocation.longitude,
     }
+    console.log(Book);
     this.userService.postBook(Book).subscribe(
       res=>{
         this.success = true;
@@ -49,5 +60,10 @@ export class PostbookComponent implements OnInit {
       err=>{
         this.error = err.error;
       });
+    }
+  
+    showPosition(position) {
+      this.geolocation = position.coords;
+      console.log(this.geolocation);
     }
 }

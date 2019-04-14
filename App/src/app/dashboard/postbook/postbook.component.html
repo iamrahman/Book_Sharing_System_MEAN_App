@@ -8,9 +8,10 @@
         <p style="color:darkred;"><img src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678069-sign-error-128.png" style="width:32px;"> 
           <b> &nbsp;Some Data is missing or not appropriate</b></p>
   </div>
+  
     <form>
       <div class="form-group col-md-6">
-        <label>Enter Book Name</label>
+        <label>Enter Book Name {{ title }}</label>
         <input type="text" name="name" [(ngModel)]="name" class="form-control" placeholder="Enter Book Name">
       </div>
       <div class="form-group col-md-6">
@@ -46,7 +47,8 @@
           <label>Enter Landmark <label style="color: rgb(194, 15, 15);">Eg: University, College, School</label></label>
           <input type="text" class="form-control" name="landmark" [(ngModel)]="landmark" placeholder="Enter Any Landmark Name (optional)">
       </div>
-
+            <input type="hidden" class="form-control" name="geolocation.longitude" [(ngModel)]="geolocation.longitude" readonly>
+            <input type="hidden" class="form-control" name="geolocation.latitude" [(ngModel)]="geolocation.latitude" readonly>
       <div class="form-group col-md-6">
           <label>Upload Front Page</label>
           <input type="file" name="front_photo" [(ngModel)]="front_photo">
@@ -60,5 +62,4 @@
         <button class="btn btn-primary" (click)="postBook()"> Publish </button>
       </div>
     </form>
- 
 </div>
