@@ -17,13 +17,20 @@ export class SinglebookComponent implements OnInit {
   user:any;
   btn:any;
 
+  lat: number;
+  lng: number;
+  
+
+
   ngOnInit() {
-    this.sub = this.route.params.subscribe(params => {
+    this.route.params.subscribe(params => {
       this.id = params['book_id'];
       });
       this.userService.getSingleBookViewDetails(this.id).subscribe(
         res => {
           this.docs = res['docs'];
+          this.lat = Number(this.docs.lat);
+          this.lng = Number(this.docs.log);
           this.userService.getSingleBookUserDetails(this.docs.user_id).subscribe(
             res => {
               this.user = res['user'];

@@ -83,7 +83,7 @@ module.exports.getSearchBookList = (req, res, next) => {
 module.exports.getBookListLocation = (req, res, next) => {
     var latitude = req.body.lat;
     var longitude = req.body.log;
-    Book.find({'lat': {$gte:latitude-1, $lte:latitude+1}, 'lat': {$gte:latitude-1, $lte:latitude+1} }, function(err, docs){
+    Book.find({'lat': {$gte:latitude-1, $lte:latitude+1}, 'log': {$gte:longitude-1, $lte:longitude+1} }, function(err, docs){
         if(err){
             res.send("Something Went Wrong");
         }

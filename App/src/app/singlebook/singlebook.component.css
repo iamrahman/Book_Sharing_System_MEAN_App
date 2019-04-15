@@ -6,3 +6,11 @@
     padding-left: 2%;
     padding-right: 5%;
 }
+p {
+    font-family: Lato;
+  }
+  
+  agm-map {
+    height: 300px;
+    width: 100%;
+  }

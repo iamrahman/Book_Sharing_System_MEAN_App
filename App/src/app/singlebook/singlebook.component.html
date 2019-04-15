@@ -12,6 +12,7 @@
     <h4><b>Publisher: </b> {{ docs.name }}</h4>
     <h4><b>Edition: </b> {{ docs.edition }}</h4>
     <h4><b>Price Type: </b> {{ docs.price_type }}</h4>
+    <h4><i class="fas fa-map-marker-alt" style="color:rgb(233, 0, 0)"></i> {{ docs.location }}</h4>
     <h1><b><i class="fas fa-rupee-sign"></i> {{ docs.price }}</b></h1>
     <button class="btn btn-primary"> <i class="fas fa-envelope"></i> Send Email To Owner</button> &nbsp; &nbsp;
     <button class="btn btn-primary"> <i class="fas fa-plus"></i> Add in your Buccket</button><br><br>
@@ -41,12 +42,14 @@
           </tr>
           <tr>
               <td><b>Landmark</b></td>
-              <td>{{ docs.landmark }}</td>
+              <td>{{ docs.landmark }} {{ lat }} {{ lng }}</td>
           </tr>
         </tbody>
       </table>
     </div>
 </div>
-<script>
-
-</script>
+<div class="col col-12">
+    <agm-map [latitude]= "lat" [longitude]="lng" [zoom]="15">
+        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map>
+</div>

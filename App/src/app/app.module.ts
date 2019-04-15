@@ -23,6 +23,7 @@ import { PostbookComponent } from './dashboard/postbook/postbook.component';
 import { HistoryComponent } from './dashboard/history/history.component';
 import { SinglebookComponent } from './singlebook/singlebook.component';
 import { UserdetailsComponent } from './dashboard/userdetails/userdetails.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,10 @@ import { UserdetailsComponent } from './dashboard/userdetails/userdetails.compon
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBI_p90tnoUaols1x78fIOehxYt3AbgXg0'
+    })
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

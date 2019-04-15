@@ -1364,5 +1364,19 @@
             "file:///home/user/Documents/MEAN-Stack-Login-and-Logout-in-Angular-6-Part-2"
         ],
         "files2": []
+    },
+    "windowsState": {
+        "lastActiveWindow": {
+            "folder": "file:///home/user/Documents/MEAN-Stack-Login-and-Logout-in-Angular-6-Part-2",
+            "backupPath": "/home/user/Documents/MEAN-Stack-Login-and-Logout-in-Angular-6-Part-2/~/.vscode-root/Backups/5afb138dd9920298978db923fd487c7d",
+            "uiState": {
+                "mode": 0,
+                "x": 65,
+                "y": 24,
+                "width": 1855,
+                "height": 1056
+            }
+        },
+        "openedWindows": []
     }
 }
