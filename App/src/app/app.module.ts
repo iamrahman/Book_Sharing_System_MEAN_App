@@ -24,6 +24,9 @@ import { HistoryComponent } from './dashboard/history/history.component';
 import { SinglebookComponent } from './singlebook/singlebook.component';
 import { UserdetailsComponent } from './dashboard/userdetails/userdetails.component';
 import { AgmCoreModule } from '@agm/core';
+import {FileUploadModule} from 'ng2-file-upload';
+import { GooglePlaceModule } from "ngx-google-places-autocomplete";
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -39,12 +42,15 @@ import { AgmCoreModule } from '@agm/core';
     HistoryComponent,
     SinglebookComponent,
     UserdetailsComponent,
+    LandingPageComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
+    FileUploadModule,
+    GooglePlaceModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBI_p90tnoUaols1x78fIOehxYt3AbgXg0'
     })

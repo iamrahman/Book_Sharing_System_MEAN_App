@@ -8,7 +8,10 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" routerLink="/" style="color:white;">
+        <a class="navbar-brand" *ngIf="!userDetails" routerLink="/" style="color:white;">
+          <b><img src="https://webstockreview.net/images/textbook-clipart-transparent-background-14.png" style="width:45px;"> ONLINE BOOKSHARE</b>
+        </a>
+        <a class="navbar-brand" *ngIf="userDetails" routerLink="/books" style="color:white;">
           <b><img src="https://webstockreview.net/images/textbook-clipart-transparent-background-14.png" style="width:45px;"> ONLINE BOOKSHARE</b>
         </a>
       </div>
@@ -43,6 +46,7 @@
             </ul>
           </li>
         <li><a href="#">About Us</a></li>
+        <li><a href="#"><img src="https://cdn3.iconfinder.com/data/icons/finalflags/256/India-Flag.png" style="width:24px;"></a></li>
         <li *ngIf="!userDetails"><a routerLink="/earn-online">Earn Online</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">

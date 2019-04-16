@@ -22,7 +22,7 @@ export class PostbookComponent implements OnInit {
       name: any;
       author: any;
       publisher: any;
-      location: any;
+      location: String;
       zip: any;
       anyphoto: any;
       back_photo: any;
@@ -30,7 +30,7 @@ export class PostbookComponent implements OnInit {
       price_type: any;
       front_photo: any;
       edition:any;
-      landmark:any;
+      landmark:String;
       success:any;
       error:any;
       lat:any;
@@ -66,4 +66,5 @@ export class PostbookComponent implements OnInit {
       this.geolocation = position.coords;
       console.log(this.geolocation);
     }
+
 }

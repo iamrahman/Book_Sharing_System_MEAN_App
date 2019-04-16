@@ -23,9 +23,8 @@
           <td>{{ obj.status }}</td>
           <td>
             <div class="btn-group">
-              <button class="btn btn-sm btn-link"><i class="fas fa-eye"></i> View</button>
-              <button class="btn btn-sm btn-link"><i class="fas fa-edit"></i> Edit</button>
-              <button class="btn btn-sm btn-link"><i class="fas fa-trash-alt"></i> Delete</button>
+              <button class="btn btn-sm btn-link edt"><i class="fas fa-edit"></i> Edit</button>
+              <button class="btn btn-sm btn-link del" (click)="deleteBook(obj._id)"><i class="fas fa-trash-alt"></i> Delete</button>
             </div>
           </td>
         </tr>

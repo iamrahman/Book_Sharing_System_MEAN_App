@@ -14,3 +14,7 @@ p {
     height: 300px;
     width: 100%;
   }
+  .map_div{
+    padding-left: 5%;
+    padding-right: 5%;
+  }

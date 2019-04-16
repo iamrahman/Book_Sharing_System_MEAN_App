@@ -92,3 +92,14 @@ module.exports.getBookListLocation = (req, res, next) => {
         }
     });
 }
+
+module.exports.deleteBook = (req, res, next) =>{
+    Book.findOneAndRemove({'_id':req.params.ID}, function(err){
+        if(err){
+            res.send("Something Went Wrong");
+        }
+        else{
+            return res.status(200).json({status: true, msg: "Data Has been Deleted Successfully"});
+        }
+    });
+}

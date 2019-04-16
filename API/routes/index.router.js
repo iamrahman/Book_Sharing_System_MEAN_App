@@ -18,4 +18,6 @@ router.get('/allbooks/currentUserBook', jwtHelper.verifyJwtToken, ctrlBook.getAl
 router.get('/book/:book_id', jwtHelper.verifyJwtToken, ctrlBook.getSingleBookDetails);
 router.post('/allbook/search', jwtHelper.verifyJwtToken, ctrlBook.getSearchBookList);
 router.post('/allbook/search/location', jwtHelper.verifyJwtToken, ctrlBook.getBookListLocation);
+router.delete('/book/:ID',jwtHelper.verifyJwtToken, ctrlBook.deleteBook);
+
 module.exports = router;

@@ -14,7 +14,8 @@
     <h4><b>Price Type: </b> {{ docs.price_type }}</h4>
     <h4><i class="fas fa-map-marker-alt" style="color:rgb(233, 0, 0)"></i> {{ docs.location }}</h4>
     <h1><b><i class="fas fa-rupee-sign"></i> {{ docs.price }}</b></h1>
-    <button class="btn btn-primary"> <i class="fas fa-envelope"></i> Send Email To Owner</button> &nbsp; &nbsp;
+    <button button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      <i class="fas fa-envelope"></i> Send Email To Owner</button>&nbsp; &nbsp;
     <button class="btn btn-primary"> <i class="fas fa-plus"></i> Add in your Buccket</button><br><br>
     <button type="button" id="btn-filter" class="btn btn-primary btn-block" data-toggle="collapse" data-target="#demo" aria-controls="collapseOne">View Owner Details</button>
     <div id="demo" class="collapse show">
@@ -42,14 +43,41 @@
           </tr>
           <tr>
               <td><b>Landmark</b></td>
-              <td>{{ docs.landmark }} {{ lat }} {{ lng }}</td>
+              <td>{{ docs.landmark }}</td>
           </tr>
         </tbody>
       </table>
     </div>
 </div>
-<div class="col col-12">
-    <agm-map [latitude]= "lat" [longitude]="lng" [zoom]="15">
-        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-    </agm-map>
+<div class="col col-12" class="map_div">
+      <agm-map [latitude]= "lat" [longitude]="lng" [zoom]="15">
+          <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+      </agm-map>
 </div>
+<!-- Model -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Send Email To {{user.fullName }} </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form>
+            <div class="modal-body">
+                <label>To: </label> <input type="text" class="form-control" value="{{user.fullName }}[ {{ user.email }} ]" readonly><br>
+                <label>Enter Your Message</label><br>
+                <textarea cols="68" rows="5">
+                    Hello, {{user.fullName.split(' ')[0] }}
+                </textarea>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" (click)="sendEmailToOwner()">Send</button>
+              </div>
+        </form>
+      </div>
+    </div>
+  </div>

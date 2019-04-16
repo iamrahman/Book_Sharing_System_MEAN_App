@@ -55,6 +55,9 @@ export class UserService {
   getListByLocation(Location){
     return this.http.post(environment.apiBaseUrl + '/allbook/search/location', Location);
   }
+  deleteBook(Id){
+    return this.http.delete(environment.apiBaseUrl + '/book/'+Id);
+  }
 
 
   //Helper Methods

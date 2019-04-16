@@ -1,5 +1,5 @@
 <legend>Post Book</legend>
-<div class="">
+<div *ngIf="geolocation || !geolocation">
   <div class="col-md-4 col-md-offset-4" *ngIf="success">
       <p style="color:darkgreen;"><img src="https://cdn2.iconfinder.com/data/icons/basic-ui-elements-16/117/correct-256.png" style="width:32px;"> 
         <b> &nbsp;Your Data has been recorded Successfully</b></p>
@@ -35,17 +35,21 @@
           <label>Enter Price</label>
           <input type="text" class="form-control" location="price" name="price" [(ngModel)]="price" placeholder="Enter Book Price in Indian Rupee">
       </div><br>
+      <div class="form-group col-md-12">
+            <label>Search Location</label>
+            <input class="form-control" name="search" [(ngModel)]="search" placeholder="Search" ngx-google-places-autocomplete #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)">
+      </div>
       <div class="form-group col-md-6">
           <label>Enter Location</label>
-          <input id="pac-input" type="text" name="location" [(ngModel)]="location" class="form-control" placeholder="Enter Location">
+          <input id="pac-input" name="location" [(ngModel)]="location " class="form-control" placeholder="Enter Location">
       </div>
       <div class="form-group col-md-6">
           <label>Enter ZIP Code</label>
-          <input type="text" class="form-control" name="zip" [(ngModel)]="zip" placeholder="Enter ZIP Code">
+          <input type="text" class="form-control" name="zip" [(ngModel)]="zip" placeholder="Enter ZIP Code" >
       </div>
       <div class="form-group col-md-12">
           <label>Enter Landmark <label style="color: rgb(194, 15, 15);">Eg: University, College, School</label></label>
-          <input type="text" class="form-control" name="landmark" [(ngModel)]="landmark" placeholder="Enter Any Landmark Name (optional)">
+          <input class="form-control" name="landmark" [(ngModel)]="landmark" placeholder="Enter Any Landmark Name (optional)">
       </div>
             <input type="hidden" class="form-control" name="geolocation.longitude" [(ngModel)]="geolocation.longitude" readonly>
             <input type="hidden" class="form-control" name="geolocation.latitude" [(ngModel)]="geolocation.latitude" readonly>

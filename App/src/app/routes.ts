@@ -11,7 +11,7 @@ import { PostbookComponent } from './dashboard/postbook/postbook.component';
 import { HistoryComponent } from './dashboard/history/history.component';
 import { SinglebookComponent } from './singlebook/singlebook.component';
 import { UserdetailsComponent } from './dashboard/userdetails/userdetails.component';
-
+import { LandingPageComponent } from './landing-page/landing-page.component';
 export const appRoutes: Routes = [
     {
         path: 'signup', component: UserComponent,
@@ -24,9 +24,6 @@ export const appRoutes: Routes = [
     {
         path: 'userprofile', component: UserProfileComponent,canActivate:[AuthGuard]
     },
-    // {
-    //     path: '', redirectTo: '/login', pathMatch: 'full'
-    // },
     {
         path: 'dashboard', component: DashboardComponent,canActivate:[AuthGuard]
     },
@@ -34,7 +31,10 @@ export const appRoutes: Routes = [
         path: 'earn-online', component: EarnonlineComponent
     },
     {
-        path: '', component: HomepageComponent
+        path: '', component: LandingPageComponent
+    },
+    {
+        path: 'books', component: HomepageComponent
     },
     {
         path: 'book/postbook', component: DashboardComponent,

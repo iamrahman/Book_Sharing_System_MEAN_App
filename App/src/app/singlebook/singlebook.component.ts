@@ -46,5 +46,9 @@ export class SinglebookComponent implements OnInit {
       ); 
   }
 
+  sendEmailToOwner(){
+    alert("Hello");
+  }
+
 
 }
