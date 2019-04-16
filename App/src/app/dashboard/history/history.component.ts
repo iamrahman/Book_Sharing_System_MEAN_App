@@ -43,4 +43,15 @@ export class HistoryComponent implements OnInit {
    }
   }
 
+  getSingleBookDetails(ID){
+    this.userService.getSingleBookViewDetails(ID).subscribe(
+      res => {
+        this.docs = res['docs'];
+      },
+      err => { 
+        console.log(ID);
+      }
+    );
+  }
+
 }
